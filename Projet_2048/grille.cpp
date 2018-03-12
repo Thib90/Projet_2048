@@ -4,3 +4,8 @@ Grille::Grille()
 {
 
 }
+
+void Grille::Init ()
+{
+
+}

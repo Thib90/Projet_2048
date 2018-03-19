@@ -8,6 +8,7 @@ class Case : public QObject
     Q_OBJECT
 public:
     explicit Case(QObject *parent = nullptr);
+    void FusionCase (); //Permet de gérer l'addition de 2 cases.
 
 signals:
 

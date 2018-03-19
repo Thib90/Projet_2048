@@ -3,8 +3,8 @@ import QtQuick.Controls 2.2
 
 ApplicationWindow {
     visible: true
-    width: 400
-    height: 650
+    width: 530
+    height: 730
     title: qsTr("Tabs")
 
     SwipeView {

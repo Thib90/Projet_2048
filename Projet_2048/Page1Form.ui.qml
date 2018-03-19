@@ -11,7 +11,7 @@ Page {
         y: 500
         width: 120
         height: 120
-        color: "#ffffff"
+        color: "#656565"
         border.color: "#808080"
         anchors.left: parent.left
         anchors.leftMargin: 10
@@ -25,7 +25,7 @@ Page {
         y: 178
         width: 120
         height: 120
-        color: "#ffffff"
+        color: "#656565"
         anchors.left: cinq.right
         anchors.leftMargin: 10
         anchors.bottom: dix.top
@@ -40,7 +40,7 @@ Page {
         y: 178
         width: 120
         height: 120
-        color: "#ffffff"
+        color: "#656565"
         anchors.bottom: neuf.top
         anchors.bottomMargin: 10
         anchors.leftMargin: 10
@@ -54,7 +54,7 @@ Page {
         y: 324
         width: 120
         height: 120
-        color: "#ffffff"
+        color: "#656565"
         anchors.left: dix.right
         anchors.leftMargin: 10
         anchors.bottom: quinze.top
@@ -68,7 +68,7 @@ Page {
         y: 324
         width: 120
         height: 120
-        color: "#ffffff"
+        color: "#656565"
         anchors.left: neuf.right
         anchors.leftMargin: 10
         anchors.bottom: quatorze.top
@@ -82,7 +82,7 @@ Page {
         y: 319
         width: 120
         height: 120
-        color: "#ffffff"
+        color: "#656565"
         anchors.bottom: treize.top
         anchors.bottomMargin: 10
         anchors.left: parent.left
@@ -96,7 +96,7 @@ Page {
         y: 460
         width: 120
         height: 120
-        color: "#ffffff"
+        color: "#656565"
         anchors.left: quatorze.right
         anchors.leftMargin: 10
         anchors.bottom: parent.bottom
@@ -110,7 +110,7 @@ Page {
         y: 460
         width: 120
         height: 120
-        color: "#ffffff"
+        color: "#656565"
         anchors.bottom: parent.bottom
         anchors.bottomMargin: 10
         anchors.left: treize.right
@@ -151,7 +151,7 @@ Page {
         y: 277
         width: 120
         height: 120
-        color: "#ffffff"
+        color: "#656565"
         anchors.leftMargin: 10
         anchors.bottom: cinq.top
         anchors.left: parent.left
@@ -166,7 +166,7 @@ Page {
         y: 414
         width: 120
         height: 120
-        color: "#ffffff"
+        color: "#656565"
         anchors.leftMargin: 10
         anchors.bottom: douze.top
         anchors.left: sept.right
@@ -181,7 +181,7 @@ Page {
         y: 540
         width: 120
         height: 120
-        color: "#ffffff"
+        color: "#656565"
         anchors.leftMargin: 10
         anchors.bottom: seize.top
         anchors.left: onze.right
@@ -196,7 +196,7 @@ Page {
         y: 670
         width: 120
         height: 120
-        color: "#ffffff"
+        color: "#656565"
         anchors.leftMargin: 10
         anchors.bottom: parent.bottom
         anchors.left: quinze.right
@@ -211,7 +211,7 @@ Page {
         y: 271
         width: 120
         height: 120
-        color: "#ffffff"
+        color: "#656565"
         anchors.leftMargin: 10
         anchors.bottom: onze.top
         anchors.left: six.right
@@ -226,7 +226,7 @@ Page {
         y: 280
         width: 120
         height: 120
-        color: "#ffffff"
+        color: "#656565"
         anchors.leftMargin: 10
         anchors.bottom: six.top
         anchors.left: un.right
@@ -241,7 +241,7 @@ Page {
         y: 277
         width: 120
         height: 120
-        color: "#ffffff"
+        color: "#656565"
         anchors.leftMargin: 10
         anchors.bottom: sept.top
         anchors.left: deux.right
@@ -256,7 +256,7 @@ Page {
         y: 277
         width: 120
         height: 120
-        color: "#ffffff"
+        color: "#656565"
         anchors.leftMargin: 10
         anchors.bottom: huit.top
         anchors.left: trois.right
@@ -264,5 +264,7 @@ Page {
         border.color: "#808080"
         opacity: 0.7
     }
+
+
 
 }

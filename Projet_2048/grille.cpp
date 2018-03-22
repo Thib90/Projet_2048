@@ -3,12 +3,17 @@
 #include "iostream"
 using namespace std;
 
+
 Grille::Grille()
 {
-    int G[4][4];
-    for(int i =0; i<4; i++)
-        for(int j =0; j<4; j++)
+    for(int i=0; i<4; i++)
+        for(int j=0; j<4; j++)
+        {
             G[i][j] = 0;
+        }
+    Perdu=1;
+
+
 }
 
 
@@ -26,9 +31,9 @@ void Grille::AjoutCase()
     }
     int x;
     int y;
-    int compteur; //permet de connaître le numéro de la case concernée
+    int compteur = 0; //permet de connaître le numéro de la case concernée
     int choix_case; //va choisir la case concernée par l'ajout d'un nombre
-    int increment; // permet de connaître la taille du vecteur crée
+    int increment = 0; // permet de connaître la taille du vecteur crée
     int nombre_ajoute; // nombre qui sera ajouté à la grille
     for (int i=0; i<4; i++) // listage des cases vides
         for(int j=0; j<4; j++)
@@ -40,21 +45,40 @@ void Grille::AjoutCase()
                 increment++;
             }
         }
-    choix_case = casevide[rand() % increment]; //choix de la case à remplir
-    nombre_ajoute = 2* (rand() % 2 + 1 );
-    choix_case--;
-    x= indice_grille[choix_case][0];
-    y = indice_grille[choix_case][1];
-    G[x][y] = nombre_ajoute; // Ajout du nombre à ajouter dans la grille
+    if (increment != 0)
+    {
+        choix_case = casevide[rand() % increment]; //choix de la case à remplir
+        nombre_ajoute = 2* (rand() % 2 + 1 );
+        choix_case--;
+        x= indice_grille[choix_case][0];
+        y = indice_grille[choix_case][1];
+        G[x][y] = nombre_ajoute; // Ajout du nombre à ajouter dans la grille
+    }
+    else
+    {
+        Perdu=0;
+
+    }
 
 }
 
-void Grille::Print(){
-    cout << endl;
+
+void Grille::TestPerdu()
+{
+    if (Perdu==0)
+    {
+        cout<< "Le joueur vient de perdre";
+    }
+
+}
+
+
+void Grille::Print()
+{
     for(int i=0; i<4; i++) {
-        cout << endl;
+        cout << endl << "--------------------------------------------" << endl;
         for(int j=0; j<4; j++)
-            cout << G[i][j] << ", ";
+            cout << G[i][j] << " ; ";
     }
 }
 

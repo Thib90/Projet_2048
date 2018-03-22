@@ -8,19 +8,20 @@
 
 class Grille
 {
-public:
+    public:
 
-    Grille();
-    void AjoutCase (); //Ajout de 2 ou 4 dans une des cases libres après un mouvement
-    void MouvementBas(); //Fonction permettant de gérer les mouvements vers le bas
-    void MouvementHaut(); //Fonction permettant de gérer les mouvements vers le haut
-    void MouvementGauche(); //Fonction permettant de gérer les mouvements vers la gauche
-    void MouvementDroite(); //Fonction permettant de gérer les mouvements vers la droite
-    void Print();
+        Grille();// Constructeur de la grille
+        void AjoutCase (); //Ajout de 2 ou 4 dans une des cases libres après un mouvement
+        void MouvementBas(); //Fonction permettant de gérer les mouvements vers le bas
+        void MouvementHaut(); //Fonction permettant de gérer les mouvements vers le haut
+        void MouvementGauche(); //Fonction permettant de gérer les mouvements vers la gauche
+        void MouvementDroite(); //Fonction permettant de gérer les mouvements vers la droite
+        void TestPerdu();
+        void Print();
 
-private:
-    int G[4][4]; //Définition de la grille
-
+    private:
+        int G[4][4]; //Définition de la grille
+        int Perdu; //Permet de savoir si le jouer a perdu ou non
 
 
 

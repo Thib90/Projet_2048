@@ -17,6 +17,7 @@ int main(int argc, char *argv[])
 
     Grille G;
     G.AjoutCase();
+    G.Print();
     G.AjoutCase();
     G.AjoutCase();
     G.AjoutCase();
@@ -31,13 +32,15 @@ int main(int argc, char *argv[])
     G.AjoutCase();
     G.AjoutCase();
     G.AjoutCase();
-    G.AjoutCase();
-    G.AjoutCase();
-    G.TestPerdu();
+    G.Print();
+    G.MouvementHaut();
+    G.Print();
+    G.MouvementBas();
     G.Print();
 
 
     return 0;
+
 
     return app.exec();
 }

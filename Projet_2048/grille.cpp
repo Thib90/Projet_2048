@@ -21,16 +21,17 @@ Grille::Grille()
 
 void Grille::AjoutCase()
 {
+    // Dans cette fonction nous avons décidé de numéroté les cases de la grille de jeu de 1 à 16 et non par leurs indices
     vector<int> casevide; //création de la liste des cases vides
     int indice_grille[16][2]; // tableau reliant indices de la grille avec notre numérotation de grille
 
-    for (int k=0; k<16; k++)
+    for (int k=0; k<16; k++) // Vecteurs qui associera les indices des cases de la grille à notre numérotation
     {
-        indice_grille[k][0] = k/4;
-        indice_grille[k][1] = k % 4;
+        indice_grille[k][0] = k/4; // permet d'obtenir le numéro de ligne
+        indice_grille[k][1] = k % 4; // permet d'obtenir le numéro de colonne
     }
-    int x;
-    int y;
+    int x; // permettra de donner la ligne de la case à remplir
+    int y; // permettra de donner la colonne de la case à remplir
     int compteur = 0; //permet de connaître le numéro de la case concernée
     int choix_case; //va choisir la case concernée par l'ajout d'un nombre
     int increment = 0; // permet de connaître la taille du vecteur crée

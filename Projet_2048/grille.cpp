@@ -39,18 +39,26 @@ void Grille::AjoutCase()
     for (int i=0; i<4; i++) // listage des cases vides
         for(int j=0; j<4; j++)
         {
-            compteur++;
-            if (G[i][j] == 0)
+            compteur++; // Permet de connaitre quel case on regarde
+            if (G[i][j] == 0) //la case est vide
             {
-                casevide.push_back(compteur);
-                increment++;
+                casevide.push_back(compteur); // ajout du numéro de la case dans notre vecteur listant les cases vides
+                increment++; // compte le nombre de case vide
             }
         }
-    if (increment != 0)
+    if (increment != 0) //vérifie que le joueur n'a pas perdu
     {
         choix_case = casevide[rand() % increment]; //choix de la case à remplir
-        nombre_ajoute = 2* (rand() % 2 + 1 );
-        choix_case--;
+        nombre_ajoute =  (rand() % 3 + 1 ); // choix du nombre à ajouter
+        if (nombre_ajoute==3) // on veut que la case 4 apparaisse avec une moins grande probabilité
+        {
+            nombre_ajoute = 4;
+        }
+        else
+        {
+            nombre_ajoute = 2;
+        }
+        choix_case--; //décalage entre numérotation de c++ et la notre
         x= indice_grille[choix_case][0];
         y = indice_grille[choix_case][1];
         G[x][y] = nombre_ajoute; // Ajout du nombre à ajouter dans la grille

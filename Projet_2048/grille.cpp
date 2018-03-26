@@ -63,6 +63,54 @@ void Grille::AjoutCase()
 }
 
 
+
+void Grille::MouvementHaut()
+{
+    for (int ligne=0; ligne<3; ligne++)
+    {
+        for(int colonne=0; colonne<4; colonne++)
+        {
+            if (G[ligne][colonne]==G[ligne+1][colonne])
+            {
+                G[ligne][colonne]=G[ligne][colonne]*2;
+                G[ligne+1][colonne]=0;
+            }
+            if (G[ligne][colonne]==0)
+            {
+                G[ligne][colonne]=G[ligne+1][colonne];
+                G[ligne+1][colonne]=0;
+            }
+        }
+
+
+    }
+    AjoutCase();
+}
+
+void Grille::MouvementBas()
+{
+    for (int ligne=3; ligne>0; ligne--)
+    {
+        for(int colonne=0; colonne<4; colonne++)
+        {
+            if (G[ligne][colonne]==G[ligne-1][colonne])
+            {
+                G[ligne][colonne]=G[ligne-1][colonne]*2;
+                G[ligne-1][colonne]=0;
+            }
+            if (G[ligne][colonne]==0)
+            {
+                G[ligne][colonne]=G[ligne-1][colonne];
+                G[ligne-1][colonne]=0;
+            }
+        }
+
+
+    }
+    AjoutCase();
+}
+
+
 void Grille::TestPerdu()
 {
     if (Perdu==0)
@@ -80,6 +128,8 @@ void Grille::Print()
         for(int j=0; j<4; j++)
             cout << G[i][j] << " ; ";
     }
+
+    cout << endl << endl;
 }
 
 

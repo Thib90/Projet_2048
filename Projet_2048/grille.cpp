@@ -75,6 +75,26 @@ void Grille::AjoutCase()
 
 void Grille::MouvementHaut()
 {
+    for (int ligne=0; ligne<3; ligne++) //à changer
+    {
+       for(int colonne=0; colonne<4; colonne++)
+       {
+           if(G[ligne][colonne] == 0)
+           {
+               int compteur =1;
+               while(G[ligne+compteur][colonne]==0 and compteur<3-ligne)
+               {
+                   compteur ++;
+               }
+               if (G[ligne+compteur][colonne] !=0)
+               {
+                   G[ligne][colonne] = G[ligne+compteur][colonne];
+                   G[ligne+compteur][colonne] = 0;
+
+               }
+           }
+       }
+    } //fin changement
     for (int ligne=0; ligne<3; ligne++)
     {
         for(int colonne=0; colonne<4; colonne++)
@@ -82,16 +102,18 @@ void Grille::MouvementHaut()
             if (G[ligne][colonne]==G[ligne+1][colonne])
             {
                 G[ligne][colonne]=G[ligne][colonne]*2;
-                G[ligne+1][colonne]=0;
+
+                if (ligne !=2)
+                {
+                    for (int k=1 ; k < 3-ligne ;k++)
+                    {
+                        G[ligne+k][colonne] = G[ligne+k+1][colonne];
+                    }
+                }
+                G[3][colonne]=0;
             }
-            if (G[ligne][colonne]==0)
-            {
-                G[ligne][colonne]=G[ligne+1][colonne];
-                G[ligne+1][colonne]=0;
-            }
+
         }
-
-
     }
     AjoutCase();
 }
@@ -100,18 +122,43 @@ void Grille::MouvementBas()
 {
     for (int ligne=3; ligne>0; ligne--)
     {
+       for(int colonne=0; colonne<4; colonne++)
+       {
+           if(G[ligne][colonne] == 0)
+           {
+               int compteur =1;
+               while(G[ligne-compteur][colonne]==0 and compteur<ligne)
+               {
+                   compteur ++;
+               }
+               if (G[ligne-compteur][colonne] !=0)
+               {
+                   G[ligne][colonne] = G[ligne-compteur][colonne];
+                   G[ligne-compteur][colonne] = 0;
+
+               }
+           }
+       }
+    }
+    for (int ligne=3; ligne>0; ligne--)
+    {
         for(int colonne=0; colonne<4; colonne++)
         {
             if (G[ligne][colonne]==G[ligne-1][colonne])
             {
                 G[ligne][colonne]=G[ligne-1][colonne]*2;
-                G[ligne-1][colonne]=0;
+
+                if (ligne!=1)
+                {
+                    for (int k = 1 ; k < ligne ;k ++)
+                    {
+                        G[ligne-k][colonne] = G[ligne-k-1][colonne];
+                    }
+                }
+
+                G[0][colonne]=0;
             }
-            if (G[ligne][colonne]==0)
-            {
-                G[ligne][colonne]=G[ligne-1][colonne];
-                G[ligne-1][colonne]=0;
-            }
+
         }
 
 
@@ -119,6 +166,98 @@ void Grille::MouvementBas()
     AjoutCase();
 }
 
+void Grille::MouvementDroite()
+{
+    for (int colonne=3; colonne>0; colonne--)
+    {
+       for(int ligne=0; ligne<4; ligne++)
+       {
+           if(G[ligne][colonne] == 0)
+           {
+               int compteur =1;
+               while(G[ligne][colonne-compteur]==0 and compteur<colonne)
+               {
+                   compteur ++;
+               }
+               if (G[ligne][colonne-compteur] !=0)
+               {
+                   G[ligne][colonne] = G[ligne][colonne-compteur];
+                   G[ligne][colonne-compteur] = 0;
+               }
+           }
+       }
+    }
+    for (int colonne=3; colonne>0; colonne--)
+    {
+        for(int ligne=0; ligne<4; ligne++)
+        {
+            if (G[ligne][colonne]==G[ligne][colonne-1])
+            {
+                G[ligne][colonne]=G[ligne][colonne-1]*2;
+
+                if (colonne!=1)
+                {
+                    for (int k = 1 ; k < colonne ;k ++)
+                    {
+                        G[ligne][colonne-k] = G[ligne][colonne-k-1];
+                    }
+                }
+
+                G[ligne][0]=0;
+            }
+
+        }
+
+
+    }
+    AjoutCase();
+}
+
+
+void Grille::MouvementGauche()
+{
+    for (int colonne=0; colonne<3; colonne++) //à changer
+    {
+       for(int ligne=0; ligne<4; ligne++)
+       {
+           if(G[ligne][colonne] == 0)
+           {
+               int compteur =1;
+               while(G[ligne][colonne+compteur]==0 and compteur<3-colonne)
+               {
+                   compteur ++;
+               }
+               if (G[ligne][colonne+compteur] !=0)
+               {
+                   G[ligne][colonne] = G[ligne][colonne+compteur];
+                   G[ligne][colonne+compteur] = 0;
+
+               }
+           }
+       }
+    } //fin changement
+    for (int colonne=0; colonne<3; colonne++)
+    {
+        for(int ligne=0; ligne<4; ligne++)
+        {
+            if (G[ligne][colonne]==G[ligne][colonne+1])
+            {
+                G[ligne][colonne]=G[ligne][colonne]*2;
+
+                if (colonne !=2)
+                {
+                    for (int k=1 ; k < 3-colonne ;k++)
+                    {
+                        G[ligne][colonne+k] = G[ligne][colonne+k+1];
+                    }
+                }
+                G[ligne][3]=0;
+            }
+
+        }
+    }
+    AjoutCase();
+}
 
 void Grille::TestPerdu()
 {

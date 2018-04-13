@@ -11,6 +11,7 @@ Grille::Grille()
         {
             this->G[i][j] = 0;
         }
+    AjoutCase();
     Perdu=1;
 
 

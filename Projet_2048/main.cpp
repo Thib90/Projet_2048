@@ -16,7 +16,6 @@ int main(int argc, char *argv[])
 
 
     Grille G;
-    G.AjoutCase();
     G.Print();
     Grille Gcopie(G);
     Gcopie.Print();

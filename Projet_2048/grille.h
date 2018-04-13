@@ -11,6 +11,7 @@ class Grille
     public:
 
         Grille();// Constructeur de la grille
+        Grille(Grille &G); //Copie une grille
         void AjoutCase (); //Ajout de 2 ou 4 dans une des cases libres après un mouvement
         void MouvementBas(); //Fonction permettant de gérer les mouvements vers le bas
         void MouvementHaut(); //Fonction permettant de gérer les mouvements vers le haut
@@ -18,6 +19,11 @@ class Grille
         void MouvementDroite(); //Fonction permettant de gérer les mouvements vers la droite
         void TestPerdu();
         void Print();
+        int Get(int i, int j);
+
+
+
+
 
     private:
         int G[4][4]; //Définition de la grille
@@ -28,5 +34,8 @@ class Grille
 
 
 };
+
+bool operator !=(Grille &G1, Grille &G2);
+
 
 #endif // GRILLE_H

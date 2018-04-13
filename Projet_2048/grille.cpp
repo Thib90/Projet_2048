@@ -9,11 +9,20 @@ Grille::Grille()
     for(int i=0; i<4; i++)
         for(int j=0; j<4; j++)
         {
-            G[i][j] = 0;
+            this->G[i][j] = 0;
         }
     Perdu=1;
 
 
+}
+
+
+
+Grille::Grille( Grille &Gr)
+{
+    for(int i=0; i<4; i++)
+        for(int j=0; j<4; j++)
+            this->G[i][j] = Gr.G[i][j];
 }
 
 
@@ -63,7 +72,7 @@ void Grille::AjoutCase()
         y = indice_grille[choix_case][1];
         G[x][y] = nombre_ajoute; // Ajout du nombre à ajouter dans la grille
     }
-    else
+    else //le joueur ne peut plus faire de mouvement
     {
         Perdu=0;
 
@@ -75,7 +84,8 @@ void Grille::AjoutCase()
 
 void Grille::MouvementHaut()
 {
-    for (int ligne=0; ligne<3; ligne++) //à changer
+    Grille Gcopie(*this);
+    for (int ligne=0; ligne<3; ligne++)
     {
        for(int colonne=0; colonne<4; colonne++)
        {
@@ -94,7 +104,7 @@ void Grille::MouvementHaut()
                }
            }
        }
-    } //fin changement
+    }
     for (int ligne=0; ligne<3; ligne++)
     {
         for(int colonne=0; colonne<4; colonne++)
@@ -115,11 +125,13 @@ void Grille::MouvementHaut()
 
         }
     }
-    AjoutCase();
+    if (*this != Gcopie)
+        AjoutCase();
 }
 
 void Grille::MouvementBas()
 {
+   Grille Gcopie(*this);
     for (int ligne=3; ligne>0; ligne--)
     {
        for(int colonne=0; colonne<4; colonne++)
@@ -158,16 +170,16 @@ void Grille::MouvementBas()
 
                 G[0][colonne]=0;
             }
-
         }
-
-
     }
-    AjoutCase();
+    if (*this != Gcopie)
+        AjoutCase();
+
 }
 
 void Grille::MouvementDroite()
 {
+    Grille Gcopie(*this);
     for (int colonne=3; colonne>0; colonne--)
     {
        for(int ligne=0; ligne<4; ligne++)
@@ -210,13 +222,15 @@ void Grille::MouvementDroite()
 
 
     }
-    AjoutCase();
+    if (*this != Gcopie)
+        AjoutCase();
 }
 
 
 void Grille::MouvementGauche()
 {
-    for (int colonne=0; colonne<3; colonne++) //à changer
+    Grille Gcopie(*this);
+    for (int colonne=0; colonne<3; colonne++)
     {
        for(int ligne=0; ligne<4; ligne++)
        {
@@ -235,7 +249,7 @@ void Grille::MouvementGauche()
                }
            }
        }
-    } //fin changement
+    }
     for (int colonne=0; colonne<3; colonne++)
     {
         for(int ligne=0; ligne<4; ligne++)
@@ -256,7 +270,8 @@ void Grille::MouvementGauche()
 
         }
     }
-    AjoutCase();
+    if (*this != Gcopie)
+        AjoutCase();
 }
 
 void Grille::TestPerdu()
@@ -280,4 +295,27 @@ void Grille::Print()
     cout << endl << endl;
 }
 
+int Grille::Get(int i, int j)
+{
+    return this->G[i][j];
+}
 
+
+bool operator !=(Grille &G1, Grille &G2)
+{
+    int compteur = 0;
+    for (int i=0;i<4;i++)
+    {
+        for (int j=0; j<4 ; j++)
+        {
+            if (G1.Get(i,j)==G2.Get(i,j))
+            {
+                compteur ++;
+            }
+        }
+    }
+    if (compteur < 16)
+        return true;
+    else
+        return false;
+}

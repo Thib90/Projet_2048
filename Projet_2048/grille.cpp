@@ -4,7 +4,7 @@
 using namespace std;
 
 
-Grille::Grille()
+Grille::Grille(QObject *parent) : QObject(parent)
 {
     for(int i=0; i<4; i++)
         for(int j=0; j<4; j++)
@@ -290,6 +290,7 @@ void Grille::MouvementGauche()
     }
     if (*this != Gcopie)
         AjoutCase();
+
 }
 
 void Grille::TestPerdu() // Fonction permettant de mettre un terme au jeu
@@ -319,6 +320,12 @@ int Grille::Get(int i, int j) // Permet d'obtenir les valeurs de la grille ( en 
 }
 
 
+void Grille::ValueCase(int i, int j, int valeur)
+{
+    G[i][j]=valeur;
+}
+
+
 bool operator !=(Grille &G1, Grille &G2) // Création d'un opérateur de comparaison entre 2 objets de la classe grille
 {
     int compteur = 0; // compte le nombre de valeeurs 2 à 2 égales entre les deux grilles
@@ -337,3 +344,5 @@ bool operator !=(Grille &G1, Grille &G2) // Création d'un opérateur de compara
     else
         return false;
 }
+
+

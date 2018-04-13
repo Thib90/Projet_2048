@@ -10,16 +10,15 @@ class Case : public QObject
     Q_OBJECT
 public:
     Case(int ligne, int colonne, Grille grille, QObject *parent = 0);
+    Q_INVOKABLE void changement();
+    Q_PROPERTY(QString CaseQML READ Read NOTIFY caseChanged);
 
-    Q_PROPERTY(QString CaseQML READ readCase NOTIFY caseChanged);
-    Q_PROPERTY(QString ColorQML READ readColor NOTIFY ColorChanged)
+    QString Read();
 
 
-    QString readCase();
-    QString readColor();
 
 signals:
-    void cptChanged();
+    void caseChanged();
 
 public slots:
 

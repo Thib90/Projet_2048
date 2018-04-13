@@ -5,6 +5,7 @@
 
 #include "grille.h"
 #include "case.h"
+#include "score.h"
 
 int main(int argc, char *argv[])
 {
@@ -26,7 +27,7 @@ int main(int argc, char *argv[])
     Case Case14(3,1,G);
     Case Case15(3,2,G);
     Case Case16(3,3,G);
-
+    Score Score(4,4,G);
 
     QQmlApplicationEngine engine;
     engine.rootContext()->setContextProperty("grille", &G);
@@ -46,10 +47,10 @@ int main(int argc, char *argv[])
     engine.rootContext()->setContextProperty("Case14", &Case14);
     engine.rootContext()->setContextProperty("Case15", &Case15);
     engine.rootContext()->setContextProperty("Case16", &Case16);
+    engine.rootContext()->setContextProperty("Score", &Score);
 
 
-
-
+    G.Print();
     engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
 
     return app.exec();

@@ -4,15 +4,31 @@ Case::Case(int ligne, int colonne, Grille grille, QObject *parent) : QObject(par
 {
     this->ligne=ligne;
     this->colonne=colonne;
-    this->grille=grille;
-    fCase=0;
-    cptChanged();
+    for (int i=0; i<4; i++)
+    {
+        for(int j=0; j<4 ; j++)
+        {
+            this->grille.ValueCase(i,j,grille.Get(i,j));
+
+        }
+    }
+
+    fCase=10;
+    caseChanged();
 }
 
-QString Case::readCase()
+QString Case::Read()
 {
-    fCase= grille [ligne][colonne];
-   return QString::number(fCase);
+    fCase=grille.Get(ligne,colonne);
+    return QString::number(fCase);
 }
 
+
+
+
+
+void Case::Changement()
+{
+    caseChanged();
+}
 

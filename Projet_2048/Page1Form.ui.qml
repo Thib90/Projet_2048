@@ -9,9 +9,11 @@ Page {
         switch (event.key) {
           case Qt.Key_Up:
             grille.MouvementHaut();
+
             break;
           case Qt.Key_Down:
             grille.MouvementBas();
+
             break;
           case Qt.Key_Right:
             grille.MouvementDroite();
@@ -36,13 +38,12 @@ Page {
         anchors.bottomMargin: 10
         opacity: 0.7
 
-        TextEdit {
+        Text {
             id: textEdit13
             x: 0
             y: -260
             color: "#fe0101"
             font.weight: Font.Black
-            selectionColor: "#000000"
             anchors.fill: parent
             leftPadding: 0
             font.capitalization: Font.Capitalize
@@ -57,16 +58,20 @@ Page {
             Keys.onPressed: {
               switch (event.key) {
                 case Qt.Key_Up:
-                  Case13.Read();
+                  grille.MouvementHaut();
+                  Case13.changement();
                   break;
                 case Qt.Key_Down:
-                  Case13.Read();
+
+                  Case13.changement();
                   break;
                 case Qt.Key_Right:
-                  Case13.Read();
+
+                  Case13.changement();
                   break;
                 case Qt.Key_Left:
-                  Case13.Read();
+
+                  Case13.changement();
                   break;
               }
             }
@@ -88,14 +93,14 @@ Page {
         border.color: "#808080"
         opacity: 0.7
 
-        TextEdit {
+        Text {
             id: textEdit6
             x: -130
             y: 0
             color: "#fe0101"
 
             font.weight: Font.Black
-            selectionColor: "#000000"
+
             anchors.fill: parent
             leftPadding: 0
             font.capitalization: Font.Capitalize
@@ -110,16 +115,20 @@ Page {
             Keys.onPressed: {
               switch (event.key) {
                 case Qt.Key_Up:
-                  Case6.Read();
+
+                  Case6.changement();
                   break;
                 case Qt.Key_Down:
-                  Case6.Read();
+
+                  Case6.changement();
                   break;
                 case Qt.Key_Right:
-                  Case6.Read();
+
+                  Case6.changement();
                   break;
                 case Qt.Key_Left:
-                  Case6.Read();
+
+                  Case6.changement();
                   break;
               }
             }
@@ -141,12 +150,12 @@ Page {
         border.color: "#808080"
         opacity: 0.7
 
-        TextEdit {
+        Text {
             id: textEdit5
             x: 0
             color: "#fe0101"
 
-            selectionColor: "#000000"
+
             font.weight: Font.Black
             anchors.fill: parent
             anchors.topMargin: 0
@@ -162,16 +171,20 @@ Page {
             Keys.onPressed: {
               switch (event.key) {
                 case Qt.Key_Up:
-                  Case5.Read();
+
+                  Case5.changement();
                   break;
                 case Qt.Key_Down:
-                  Case5.Read();
+
+                  Case5.changement();
                   break;
                 case Qt.Key_Right:
-                  Case5.Read();
+
+                  Case5.changement();
                   break;
                 case Qt.Key_Left:
-                  Case5.Read();
+
+                  Case5.changement();
                   break;
               }
             }
@@ -192,14 +205,14 @@ Page {
         border.color: "#808080"
         opacity: 0.7
 
-        TextEdit {
+        Text {
             id: textEdit11
             x: -260
             y: -130
             color: "#fe0101"
 
             font.weight: Font.Black
-            selectionColor: "#000000"
+
             anchors.fill: parent
             leftPadding: 0
             font.capitalization: Font.Capitalize
@@ -214,16 +227,20 @@ Page {
             Keys.onPressed: {
               switch (event.key) {
                 case Qt.Key_Up:
-                  Case11.Read();
+
+                  Case11.changement();
                   break;
                 case Qt.Key_Down:
-                  Case11.Read();
+
+                  Case11.changement();
                   break;
                 case Qt.Key_Right:
-                  Case11.Read();
+
+                  Case11.changement();
                   break;
                 case Qt.Key_Left:
-                  Case11.Read();
+
+                  Case11.changement();
                   break;
               }
             }
@@ -244,14 +261,14 @@ Page {
         border.color: "#808080"
         opacity: 0.7
 
-        TextEdit {
+        Text {
             id: textEdit10
             x: -130
             y: -130
             color: "#fe0101"
 
             font.weight: Font.Black
-            selectionColor: "#000000"
+
             anchors.fill: parent
             leftPadding: 0
             font.capitalization: Font.Capitalize
@@ -266,16 +283,20 @@ Page {
             Keys.onPressed: {
               switch (event.key) {
                 case Qt.Key_Up:
-                  Case10.Read();
+
+                  Case10.changement();
                   break;
                 case Qt.Key_Down:
-                  Case10.Read();
+
+                  Case10.changement();
                   break;
                 case Qt.Key_Right:
-                  Case10.Read();
+
+                  Case10.changement();
                   break;
                 case Qt.Key_Left:
-                  Case10.Read();
+
+                  Case10.changement();
                   break;
               }
             }
@@ -296,14 +317,14 @@ Page {
         border.color: "#808080"
         opacity: 0.7
 
-        TextEdit {
+        Text {
             id: textEdit9
             x: 0
             y: -130
             color: "#fe0101"
 
             font.weight: Font.Black
-            selectionColor: "#000000"
+
             anchors.fill: parent
             leftPadding: 0
             font.capitalization: Font.Capitalize
@@ -318,16 +339,20 @@ Page {
             Keys.onPressed: {
               switch (event.key) {
                 case Qt.Key_Up:
-                  Case9.Read();
+
+                  Case9.changement();
                   break;
                 case Qt.Key_Down:
-                  Case9.Read();
+
+                  Case9.changement();
                   break;
                 case Qt.Key_Right:
-                  Case9.Read();
+
+                  Case9.changement();
                   break;
                 case Qt.Key_Left:
-                  Case9.Read();
+
+                  Case9.changement();
                   break;
               }
             }
@@ -348,14 +373,14 @@ Page {
         border.color: "#808080"
         opacity: 0.7
 
-        TextEdit {
+        Text {
             id: textEdit15
             x: -260
             y: -260
             color: "#fe0101"
 
             font.weight: Font.Black
-            selectionColor: "#000000"
+
             anchors.fill: parent
             leftPadding: 0
             font.capitalization: Font.Capitalize
@@ -370,16 +395,20 @@ Page {
             Keys.onPressed: {
               switch (event.key) {
                 case Qt.Key_Up:
-                  Case15.Read();
+
+                  Case15.changement();
                   break;
                 case Qt.Key_Down:
-                  Case15.Read();
+
+                  Case15.changement();
                   break;
                 case Qt.Key_Right:
-                  Case15.Read();
+
+                  Case15.changement();
                   break;
                 case Qt.Key_Left:
-                  Case15.Read();
+
+                  Case15.changement();
                   break;
               }
             }
@@ -400,14 +429,14 @@ Page {
         border.color: "#808080"
         opacity: 0.7
 
-        TextEdit {
+        Text {
             id: textEdit14
             x: -130
             y: -260
             color: "#fe0101"
 
             font.weight: Font.Black
-            selectionColor: "#000000"
+
             anchors.fill: parent
             leftPadding: 0
             font.capitalization: Font.Capitalize
@@ -422,16 +451,20 @@ Page {
             Keys.onPressed: {
               switch (event.key) {
                 case Qt.Key_Up:
-                  Case14.Read();
+
+                  Case14.changement();
                   break;
                 case Qt.Key_Down:
-                  Case14.Read();
+
+                  Case14.changement();
                   break;
                 case Qt.Key_Right:
-                  Case14.Read();
+
+                  Case14.changement();
                   break;
                 case Qt.Key_Left:
-                  Case14.Read();
+
+                  Case14.changement();
                   break;
               }
             }
@@ -465,7 +498,7 @@ Page {
         border.color: "#808080"
         opacity: 0.7
 
-        TextEdit {
+        Text {
             id: textEdit1
             x: 0
             y: -2
@@ -477,7 +510,7 @@ Page {
             font.weight: Font.Black
             font.capitalization: Font.Capitalize
             renderType: Text.QtRendering
-            selectionColor: "#008033"
+
             horizontalAlignment: Text.AlignHCenter
             font.family: "Arial"
             textFormat: Text.AutoText
@@ -487,16 +520,20 @@ Page {
             Keys.onPressed: {
               switch (event.key) {
                 case Qt.Key_Up:
-                  Case1.Read();
+
+                  Case1.changement();
                   break;
                 case Qt.Key_Down:
-                  Case1.Read();
+
+                  Case1.changement();
                   break;
                 case Qt.Key_Right:
-                  Case1.Read();
+
+                  Case1.changement();
                   break;
                 case Qt.Key_Left:
-                  Case1.Read();
+
+                  Case1.changement();
                   break;
               }
             }
@@ -518,14 +555,14 @@ Page {
         border.color: "#808080"
         opacity: 0.7
 
-        TextEdit {
+        Text {
             id: textEdit8
             x: -390
             y: 0
             color: "#fe0101"
 
             font.weight: Font.Black
-            selectionColor: "#000000"
+
             anchors.fill: parent
             leftPadding: 0
             font.capitalization: Font.Capitalize
@@ -540,16 +577,20 @@ Page {
             Keys.onPressed: {
               switch (event.key) {
                 case Qt.Key_Up:
-                  Case8.Read();
+
+                  Case8.changement();
                   break;
                 case Qt.Key_Down:
-                  Case8.Read();
+
+                  Case8.changement();
                   break;
                 case Qt.Key_Right:
-                  Case8.Read();
+
+                  Case8.changement();
                   break;
                 case Qt.Key_Left:
-                  Case8.Read();
+
+                  Case8.changement();
                   break;
               }
             }
@@ -571,14 +612,14 @@ Page {
         border.color: "#808080"
         opacity: 0.7
 
-        TextEdit {
+        Text {
             id: textEdit12
             x: -390
             y: -130
             color: "#fe0101"
 
             font.weight: Font.Black
-            selectionColor: "#000000"
+
             anchors.fill: parent
             leftPadding: 0
             font.capitalization: Font.Capitalize
@@ -593,16 +634,20 @@ Page {
             Keys.onPressed: {
               switch (event.key) {
                 case Qt.Key_Up:
-                  Case12.Read();
+
+                  Case12.changement();
                   break;
                 case Qt.Key_Down:
-                  Case12.Read();
+
+                  Case12.changement();
                   break;
                 case Qt.Key_Right:
-                  Case12.Read();
+
+                  Case12.changement();
                   break;
                 case Qt.Key_Left:
-                  Case12.Read();
+
+                  Case12.changement();
                   break;
               }
             }
@@ -624,14 +669,14 @@ Page {
         border.color: "#808080"
         opacity: 0.7
 
-        TextEdit {
+        Text {
             id: textEdit16
             x: -390
             y: -260
             color: "#fe0101"
 
             font.weight: Font.Black
-            selectionColor: "#000000"
+
             anchors.fill: parent
             leftPadding: 0
             font.capitalization: Font.Capitalize
@@ -646,16 +691,20 @@ Page {
             Keys.onPressed: {
               switch (event.key) {
                 case Qt.Key_Up:
-                  Case16.Read();
+
+                  Case16.changement();
                   break;
                 case Qt.Key_Down:
-                  Case16.Read();
+
+                  Case16.changement();
                   break;
                 case Qt.Key_Right:
-                  Case16.Read();
+
+                  Case16.changement();
                   break;
                 case Qt.Key_Left:
-                  Case16.Read();
+
+                  Case16.changement();
                   break;
               }
             }
@@ -677,14 +726,14 @@ Page {
         anchors.bottomMargin: 10
         opacity: 0.7
 
-        TextEdit {
+        Text {
             id: textEdit7
             x: -260
             y: 0
             color: "#fe0101"
 
             font.weight: Font.Black
-            selectionColor: "#000000"
+
             anchors.fill: parent
             leftPadding: 0
             font.capitalization: Font.Capitalize
@@ -699,16 +748,20 @@ Page {
             Keys.onPressed: {
               switch (event.key) {
                 case Qt.Key_Up:
-                  Case7.Read();
+
+                  Case7.changement();
                   break;
                 case Qt.Key_Down:
-                  Case7.Read();
+
+                  Case7.changement();
                   break;
                 case Qt.Key_Right:
-                  Case7.Read();
+
+                  Case7.changement();
                   break;
                 case Qt.Key_Left:
-                  Case7.Read();
+
+                  Case7.changement();
                   break;
               }
             }
@@ -730,13 +783,13 @@ Page {
         border.color: "#808080"
         opacity: 0.7
 
-        TextEdit {
+        Text {
             id: textEdit2
             x: -130
             y: 0
             color: "#fe0101"
 
-            selectionColor: "#008033"
+
             font.weight: Font.Black
             anchors.fill: parent
             anchors.topMargin: 0
@@ -752,16 +805,20 @@ Page {
             Keys.onPressed: {
               switch (event.key) {
                 case Qt.Key_Up:
-                  Case2.Read();
+
+                  Case2.changement();
                   break;
                 case Qt.Key_Down:
-                  Case2.Read();
+
+                  Case2.changement();
                   break;
                 case Qt.Key_Right:
-                  Case2.Read();
+
+                  Case2.changement();
                   break;
                 case Qt.Key_Left:
-                  Case2.Read();
+
+                  Case2.changement();
                   break;
               }
             }
@@ -782,13 +839,13 @@ Page {
         border.color: "#808080"
         opacity: 0.7
 
-        TextEdit {
+        Text {
             id: textEdit3
             x: -260
             y: 0
             color: "#fe0101"
 
-            selectionColor: "#008033"
+
             font.weight: Font.Black
             anchors.fill: parent
             anchors.topMargin: 0
@@ -804,16 +861,20 @@ Page {
             Keys.onPressed: {
               switch (event.key) {
                 case Qt.Key_Up:
-                  Case3.Read();
+
+                  Case3.changement();
                   break;
                 case Qt.Key_Down:
-                  Case3.Read();
+
+                  Case3.changement();
                   break;
                 case Qt.Key_Right:
-                  Case3.Read();
+
+                  Case3.changement();
                   break;
                 case Qt.Key_Left:
-                  Case3.Read();
+
+                  Case3.changement();
                   break;
               }
             }
@@ -835,13 +896,13 @@ Page {
         border.color: "#808080"
         opacity: 0.7
 
-        TextEdit {
+        Text {
             id: textEdit4
             x: -390
             y: 0
             color: "#fe0101"
 
-            selectionColor: "#008033"
+
             font.weight: Font.Black
             anchors.fill: parent
             anchors.topMargin: 0
@@ -857,16 +918,20 @@ Page {
             Keys.onPressed: {
               switch (event.key) {
                 case Qt.Key_Up:
-                  Case4.Read();
+
+                  Case4.changement();
                   break;
                 case Qt.Key_Down:
-                  Case4.Read();
+
+                  Case4.changement();
                   break;
                 case Qt.Key_Right:
-                  Case4.Read();
+
+                  Case4.changement();
                   break;
                 case Qt.Key_Left:
-                  Case4.Read();
+
+                  Case4.changement();
                   break;
               }
             }
@@ -884,7 +949,7 @@ Page {
         anchors.topMargin: 10
         border.color: "#040404"
 
-        TextEdit {
+        Text{
             id: scoretext
             color: "#0a00c9"
             text: qsTr("Score")
@@ -906,11 +971,18 @@ Page {
         anchors.top: score.bottom
         anchors.topMargin: 10
 
-        TextEdit {
+        Text {
             id: textEdit
             color: "#0a00c9"
-            text: qsTr("10000")
-            selectionColor: "#00000000"
+            text: Score.caseQML
+            Keys.onPressed: {
+              switch (event.key) {
+                case Qt.Key_Up:
+                  Score.increment();
+                  break;
+              }
+            }
+
             horizontalAlignment: Text.AlignHCenter
             font.weight: Font.ExtraBold
             anchors.fill: parent

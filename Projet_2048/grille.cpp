@@ -18,11 +18,11 @@ Grille::Grille()
 
 
 
-Grille::Grille( Grille &Gr)
+Grille::Grille( Grille &Gr) // constructeur de copie
 {
     for(int i=0; i<4; i++)
         for(int j=0; j<4; j++)
-            this->G[i][j] = Gr.G[i][j];
+            this->G[i][j] = Gr.G[i][j]; // copie un à un des termes de la grille à copier
 }
 
 
@@ -83,53 +83,62 @@ void Grille::AjoutCase()
 
 
 void Grille::MouvementHaut()
+// Fonction qui a pour but de gérer les valeurs de la grille lorsque l'utilisateur commande un mouvementvers le haut
 {
-    Grille Gcopie(*this);
-    for (int ligne=0; ligne<3; ligne++)
+    Grille Gcopie(*this); // copie de la grille avant sa modification
+    /*Afin de pouvoir gérer les nouvelles valeurs de la grille, on va se placer dans une situation plus facile avant de comparer :
+    celle où tous les chiffres non nul sont côte à côte
+    On va donc dans un premier temps "trier" notre grille vers le haut*/
+    for (int ligne=0; ligne<3; ligne++)   // on parcours les valeurs jusqu'à l'avant dernière valeur car la dernière sera vérifiée car on compare les valeurs 2 à 2
     {
-       for(int colonne=0; colonne<4; colonne++)
+       for(int colonne=0; colonne<4; colonne++) // on réalise ce tri sur toutes les colonnes
        {
-           if(G[ligne][colonne] == 0)
+           if(G[ligne][colonne] == 0) // on regarde les cases où la valeur est 0
            {
-               int compteur =1;
-               while(G[ligne+compteur][colonne]==0 and compteur<3-ligne)
+               int compteur =1; // permet de compter le nombre de cases d'affilé contenant un 0
+               while(G[ligne+compteur][colonne]==0 and compteur<3-ligne) // permet de réaliser le compte avec en plus une assurance que la boucle s'arrête
                {
-                   compteur ++;
+                   compteur ++; // 1 case de plus comporte un 0
                }
-               if (G[ligne+compteur][colonne] !=0)
+               if (G[ligne+compteur][colonne] !=0) // cas de la case non nul
                {
-                   G[ligne][colonne] = G[ligne+compteur][colonne];
-                   G[ligne+compteur][colonne] = 0;
+                   G[ligne][colonne] = G[ligne+compteur][colonne]; //on échange la case non nul avec une comprenant un 0
+                   G[ligne+compteur][colonne] = 0; // deuxième partie de l'échange
 
                }
            }
        }
     }
-    for (int ligne=0; ligne<3; ligne++)
+    /* Dans un deuxième temps, on va trier notre tableau en comparant chaque valeur 2 à 2.
+     Le travail précédemment réalisé permet ainsi de facilité le travail en ne comparant pas de 0 avec des valeurs non nulles*/
+    for (int ligne=0; ligne<3; ligne++) // on compare les valeurs 2 à 2 donc on va que jusqu'à 3
     {
         for(int colonne=0; colonne<4; colonne++)
         {
-            if (G[ligne][colonne]==G[ligne+1][colonne])
+            if (G[ligne][colonne]==G[ligne+1][colonne]) // cas où 2 valeurs consécutifs non déjà fusionnées sont égales
             {
-                G[ligne][colonne]=G[ligne][colonne]*2;
+                G[ligne][colonne]=G[ligne][colonne]*2; // on multiplie la case la plus haute
 
-                if (ligne !=2)
+                if (ligne !=2) // si on se trouve dans la dernière comparaison on n'a pas besoin de changer les valeurs des cases
                 {
-                    for (int k=1 ; k < 3-ligne ;k++)
+                    for (int k=1 ; k < 3-ligne ;k++) // on va décaler toutes les valeurs des cases en dessous de la case ayant subi la fusion
                     {
-                        G[ligne+k][colonne] = G[ligne+k+1][colonne];
+                        G[ligne+k][colonne] = G[ligne+k+1][colonne]; // on décale de 1 case vers le haut chaque valeur
                     }
                 }
-                G[3][colonne]=0;
+                G[3][colonne]=0; // la dernière case prend un 0 (car on a fusionné)
             }
 
         }
     }
-    if (*this != Gcopie)
-        AjoutCase();
+    if (*this != Gcopie) // on vérifie que le mouvement à emmener une variation de la grille
+        AjoutCase(); // si il y a eu un changement de la grille induit par le mouvement, on ajoute une valeur à une case nulle
 }
 
 void Grille::MouvementBas()
+/*La fonction MouvementBas est codée exactement sur le même raisonnement que la fonction MouvementHaut.
+ La seule différence réside dans le fait que l'on raisonne avec les indices vers le bas (en décroissant)
+ Ainsi il faut se réfèrer aux commentaires de la fonction MouvementHaut pour avoir plus de détails*/
 {
    Grille Gcopie(*this);
     for (int ligne=3; ligne>0; ligne--)
@@ -178,6 +187,10 @@ void Grille::MouvementBas()
 }
 
 void Grille::MouvementDroite()
+/*La fonction MouvementDroite est codée exactement sur le même raisonnement que la fonction MouvementHaut.
+ La seule différence réside dans le fait que l'on raisonne non plus sur les lignes mais sur les colonnes;
+ On a donc interverti les roles des deux boucles for.
+ Il faut se réfèrer aux commentaires de la fonction MouvementHaut pour avoir plus de détails*/
 {
     Grille Gcopie(*this);
     for (int colonne=3; colonne>0; colonne--)
@@ -228,6 +241,10 @@ void Grille::MouvementDroite()
 
 
 void Grille::MouvementGauche()
+/*La fonction MouvementGauche est codée exactement sur le même raisonnement que la fonction MouvementHaut.
+ La seule différence réside dans le fait que l'on raisonne non plus sur les lignes mais sur les colonnes;
+ On a donc interverti les roles des deux boucles for. Le déplacement sur les colonnes est inversé par rapport à la fonction MouvementDroite
+ Il faut se réfèrer aux commentaires de la fonction MouvementHaut pour avoir plus de détails*/
 {
     Grille Gcopie(*this);
     for (int colonne=0; colonne<3; colonne++)
@@ -274,48 +291,48 @@ void Grille::MouvementGauche()
         AjoutCase();
 }
 
-void Grille::TestPerdu()
+void Grille::TestPerdu() // Fonction permettant de mettre un terme au jeu
 {
-    if (Perdu==0)
+    if (Perdu==0) // Cette valeur de la variable interne à la classe indique que le joueur a perdu
     {
-        cout<< "Le joueur vient de perdre";
+        cout<< "Le joueur vient de perdre"; // Message de fin de partie
     }
 
 }
 
 
-void Grille::Print()
+void Grille::Print() // Permet de tester les valeurs de notre grille durant notre codage pour voir si nos nouvelles fonctions fonctionnent
 {
     for(int i=0; i<4; i++) {
-        cout << endl << "--------------------------------------------" << endl;
+        cout << endl << "---------------" << endl;
         for(int j=0; j<4; j++)
-            cout << G[i][j] << " ; ";
+            cout << G[i][j] << " ; "; // Affichage de chaque valeur de la grille
     }
 
     cout << endl << endl;
 }
 
-int Grille::Get(int i, int j)
+int Grille::Get(int i, int j) // Permet d'obtenir les valeurs de la grille ( en effet celles-ci sont privées; internes à la classe)
 {
     return this->G[i][j];
 }
 
 
-bool operator !=(Grille &G1, Grille &G2)
+bool operator !=(Grille &G1, Grille &G2) // Création d'un opérateur de comparaison entre 2 objets de la classe grille
 {
-    int compteur = 0;
+    int compteur = 0; // compte le nombre de valeeurs 2 à 2 égales entre les deux grilles
     for (int i=0;i<4;i++)
     {
         for (int j=0; j<4 ; j++)
         {
-            if (G1.Get(i,j)==G2.Get(i,j))
+            if (G1.Get(i,j)==G2.Get(i,j)) //utilisation de la fonction get afin d'avoir accès aux valeurs privées de chaque case des deux grilles
             {
-                compteur ++;
+                compteur ++; // les deux valeurs sont égales; on ajoute +1 à compteur
             }
         }
     }
-    if (compteur < 16)
-        return true;
+    if (compteur < 16) // cas où toutes les valeurs ne sont pas égales
+        return true; // on a réalisé un comparateur de différence donc return true dans le cas où les grilles sont différentes
     else
         return false;
 }

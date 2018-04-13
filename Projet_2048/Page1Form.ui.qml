@@ -1,29 +1,28 @@
 import QtQuick 2.9
 import QtQuick.Controls 2.2
 
-Page {
+Rectangle {
     id: page
     width: 530
     height: 700
-    Keys.onPressed: {
+
+    /*Keys.onPressed: {
         switch (event.key) {
-          case Qt.Key_Up:
-            grille.MouvementHaut();
+        case Qt.Key_Up:
 
-            break;
-          case Qt.Key_Down:
-            grille.MouvementBas();
-
-            break;
-          case Qt.Key_Right:
-            grille.MouvementDroite();
-            break;
-          case Qt.Key_Left:
-            grille.MouvementGauche();
-            break;
-    }
-    }
-
+            grille.MouvementHaut()
+            break
+        case Qt.Key_Down:
+            grille.MouvementBas()
+            break
+        case Qt.Key_Right:
+            grille.MouvementDroite()
+            break
+        case Qt.Key_Left:
+            grille.MouvementGauche()
+            break
+        }
+    }*/
     Rectangle {
         id: treize
         y: 500
@@ -55,28 +54,28 @@ Page {
             textFormat: Text.AutoText
             topPadding: 40
             text: Case13.CaseQML
+            focus: true
             Keys.onPressed: {
-              switch (event.key) {
+                switch (event.key) {
                 case Qt.Key_Up:
-                  grille.MouvementHaut();
-                  Case13.changement();
-                  break;
+                    Case13.changement(MaGrille,1)
+
+                    break
                 case Qt.Key_Down:
 
-                  Case13.changement();
-                  break;
+                    Case13.changement(MaGrille,2)
+                    break
                 case Qt.Key_Right:
 
-                  Case13.changement();
-                  break;
+                    Case13.changement(MaGrille,3)
+                    break
                 case Qt.Key_Left:
 
-                  Case13.changement();
-                  break;
-              }
+                    Case13.changement(MaGrille,4)
+                    break
+                }
             }
         }
-
     }
 
     Rectangle {
@@ -112,25 +111,26 @@ Page {
             textFormat: Text.AutoText
             topPadding: 40
             text: Case6.CaseQML
+            focus: true
             Keys.onPressed: {
-              switch (event.key) {
+                switch (event.key) {
                 case Qt.Key_Up:
 
-                  Case6.changement();
-                  break;
+                    Case6.changement()
+                    break
                 case Qt.Key_Down:
 
-                  Case6.changement();
-                  break;
+                    Case6.changement()
+                    break
                 case Qt.Key_Right:
 
-                  Case6.changement();
-                  break;
+                    Case6.changement()
+                    break
                 case Qt.Key_Left:
 
-                  Case6.changement();
-                  break;
-              }
+                    Case6.changement()
+                    break
+                }
             }
         }
     }
@@ -155,7 +155,6 @@ Page {
             x: 0
             color: "#fe0101"
 
-
             font.weight: Font.Black
             anchors.fill: parent
             anchors.topMargin: 0
@@ -168,25 +167,26 @@ Page {
             textFormat: Text.AutoText
             topPadding: 40
             text: Case5.CaseQML
+            focus: true
             Keys.onPressed: {
-              switch (event.key) {
+                switch (event.key) {
                 case Qt.Key_Up:
 
-                  Case5.changement();
-                  break;
+                    Case5.changement()
+                    break
                 case Qt.Key_Down:
 
-                  Case5.changement();
-                  break;
+                    Case5.changement()
+                    break
                 case Qt.Key_Right:
 
-                  Case5.changement();
-                  break;
+                    Case5.changement()
+                    break
                 case Qt.Key_Left:
 
-                  Case5.changement();
-                  break;
-              }
+                    Case5.changement()
+                    break
+                }
             }
         }
     }
@@ -225,24 +225,24 @@ Page {
             topPadding: 40
             text: Case11.CaseQML
             Keys.onPressed: {
-              switch (event.key) {
+                switch (event.key) {
                 case Qt.Key_Up:
 
-                  Case11.changement();
-                  break;
+                    Case11.changement()
+                    break
                 case Qt.Key_Down:
 
-                  Case11.changement();
-                  break;
+                    Case11.changement()
+                    break
                 case Qt.Key_Right:
 
-                  Case11.changement();
-                  break;
+                    Case11.changement()
+                    break
                 case Qt.Key_Left:
 
-                  Case11.changement();
-                  break;
-              }
+                    Case11.changement()
+                    break
+                }
             }
         }
     }
@@ -281,24 +281,24 @@ Page {
             topPadding: 40
             text: Case10.CaseQML
             Keys.onPressed: {
-              switch (event.key) {
+                switch (event.key) {
                 case Qt.Key_Up:
 
-                  Case10.changement();
-                  break;
+                    Case10.changement()
+                    break
                 case Qt.Key_Down:
 
-                  Case10.changement();
-                  break;
+                    Case10.changement()
+                    break
                 case Qt.Key_Right:
 
-                  Case10.changement();
-                  break;
+                    Case10.changement()
+                    break
                 case Qt.Key_Left:
 
-                  Case10.changement();
-                  break;
-              }
+                    Case10.changement()
+                    break
+                }
             }
         }
     }
@@ -337,24 +337,24 @@ Page {
             topPadding: 40
             text: Case9.CaseQML
             Keys.onPressed: {
-              switch (event.key) {
+                switch (event.key) {
                 case Qt.Key_Up:
 
-                  Case9.changement();
-                  break;
+                    Case9.changement()
+                    break
                 case Qt.Key_Down:
 
-                  Case9.changement();
-                  break;
+                    Case9.changement()
+                    break
                 case Qt.Key_Right:
 
-                  Case9.changement();
-                  break;
+                    Case9.changement()
+                    break
                 case Qt.Key_Left:
 
-                  Case9.changement();
-                  break;
-              }
+                    Case9.changement()
+                    break
+                }
             }
         }
     }
@@ -393,24 +393,24 @@ Page {
             topPadding: 40
             text: Case15.CaseQML
             Keys.onPressed: {
-              switch (event.key) {
+                switch (event.key) {
                 case Qt.Key_Up:
 
-                  Case15.changement();
-                  break;
+                    Case15.changement()
+                    break
                 case Qt.Key_Down:
 
-                  Case15.changement();
-                  break;
+                    Case15.changement()
+                    break
                 case Qt.Key_Right:
 
-                  Case15.changement();
-                  break;
+                    Case15.changement()
+                    break
                 case Qt.Key_Left:
 
-                  Case15.changement();
-                  break;
-              }
+                    Case15.changement()
+                    break
+                }
             }
         }
     }
@@ -449,24 +449,24 @@ Page {
             topPadding: 40
             text: Case14.CaseQML
             Keys.onPressed: {
-              switch (event.key) {
+                switch (event.key) {
                 case Qt.Key_Up:
 
-                  Case14.changement();
-                  break;
+                    Case14.changement()
+                    break
                 case Qt.Key_Down:
 
-                  Case14.changement();
-                  break;
+                    Case14.changement()
+                    break
                 case Qt.Key_Right:
 
-                  Case14.changement();
-                  break;
+                    Case14.changement()
+                    break
                 case Qt.Key_Left:
 
-                  Case14.changement();
-                  break;
-              }
+                    Case14.changement()
+                    break
+                }
             }
         }
     }
@@ -518,24 +518,24 @@ Page {
             anchors.fill: parent
             text: Case1.CaseQML
             Keys.onPressed: {
-              switch (event.key) {
+                switch (event.key) {
                 case Qt.Key_Up:
 
-                  Case1.changement();
-                  break;
+                    Case1.changement()
+                    break
                 case Qt.Key_Down:
 
-                  Case1.changement();
-                  break;
+                    Case1.changement()
+                    break
                 case Qt.Key_Right:
 
-                  Case1.changement();
-                  break;
+                    Case1.changement()
+                    break
                 case Qt.Key_Left:
 
-                  Case1.changement();
-                  break;
-              }
+                    Case1.changement()
+                    break
+                }
             }
         }
     }
@@ -575,24 +575,24 @@ Page {
             topPadding: 40
             text: Case8.CaseQML
             Keys.onPressed: {
-              switch (event.key) {
+                switch (event.key) {
                 case Qt.Key_Up:
 
-                  Case8.changement();
-                  break;
+                    Case8.changement()
+                    break
                 case Qt.Key_Down:
 
-                  Case8.changement();
-                  break;
+                    Case8.changement()
+                    break
                 case Qt.Key_Right:
 
-                  Case8.changement();
-                  break;
+                    Case8.changement()
+                    break
                 case Qt.Key_Left:
 
-                  Case8.changement();
-                  break;
-              }
+                    Case8.changement()
+                    break
+                }
             }
         }
     }
@@ -632,24 +632,24 @@ Page {
             topPadding: 40
             text: Case12.CaseQML
             Keys.onPressed: {
-              switch (event.key) {
+                switch (event.key) {
                 case Qt.Key_Up:
 
-                  Case12.changement();
-                  break;
+                    Case12.changement()
+                    break
                 case Qt.Key_Down:
 
-                  Case12.changement();
-                  break;
+                    Case12.changement()
+                    break
                 case Qt.Key_Right:
 
-                  Case12.changement();
-                  break;
+                    Case12.changement()
+                    break
                 case Qt.Key_Left:
 
-                  Case12.changement();
-                  break;
-              }
+                    Case12.changement()
+                    break
+                }
             }
         }
     }
@@ -689,24 +689,24 @@ Page {
             topPadding: 40
             text: Case16.CaseQML
             Keys.onPressed: {
-              switch (event.key) {
+                switch (event.key) {
                 case Qt.Key_Up:
 
-                  Case16.changement();
-                  break;
+                    Case16.changement()
+                    break
                 case Qt.Key_Down:
 
-                  Case16.changement();
-                  break;
+                    Case16.changement()
+                    break
                 case Qt.Key_Right:
 
-                  Case16.changement();
-                  break;
+                    Case16.changement()
+                    break
                 case Qt.Key_Left:
 
-                  Case16.changement();
-                  break;
-              }
+                    Case16.changement()
+                    break
+                }
             }
         }
     }
@@ -746,24 +746,24 @@ Page {
             topPadding: 40
             text: Case7.CaseQML
             Keys.onPressed: {
-              switch (event.key) {
+                switch (event.key) {
                 case Qt.Key_Up:
 
-                  Case7.changement();
-                  break;
+                    Case7.changement()
+                    break
                 case Qt.Key_Down:
 
-                  Case7.changement();
-                  break;
+                    Case7.changement()
+                    break
                 case Qt.Key_Right:
 
-                  Case7.changement();
-                  break;
+                    Case7.changement()
+                    break
                 case Qt.Key_Left:
 
-                  Case7.changement();
-                  break;
-              }
+                    Case7.changement()
+                    break
+                }
             }
         }
     }
@@ -789,7 +789,6 @@ Page {
             y: 0
             color: "#fe0101"
 
-
             font.weight: Font.Black
             anchors.fill: parent
             anchors.topMargin: 0
@@ -803,24 +802,24 @@ Page {
             topPadding: 40
             text: Case2.CaseQML
             Keys.onPressed: {
-              switch (event.key) {
+                switch (event.key) {
                 case Qt.Key_Up:
 
-                  Case2.changement();
-                  break;
+                    Case2.changement()
+                    break
                 case Qt.Key_Down:
 
-                  Case2.changement();
-                  break;
+                    Case2.changement()
+                    break
                 case Qt.Key_Right:
 
-                  Case2.changement();
-                  break;
+                    Case2.changement()
+                    break
                 case Qt.Key_Left:
 
-                  Case2.changement();
-                  break;
-              }
+                    Case2.changement()
+                    break
+                }
             }
         }
     }
@@ -845,7 +844,6 @@ Page {
             y: 0
             color: "#fe0101"
 
-
             font.weight: Font.Black
             anchors.fill: parent
             anchors.topMargin: 0
@@ -859,24 +857,24 @@ Page {
             topPadding: 40
             text: Case3.CaseQML
             Keys.onPressed: {
-              switch (event.key) {
+                switch (event.key) {
                 case Qt.Key_Up:
 
-                  Case3.changement();
-                  break;
+                    Case3.changement()
+                    break
                 case Qt.Key_Down:
 
-                  Case3.changement();
-                  break;
+                    Case3.changement()
+                    break
                 case Qt.Key_Right:
 
-                  Case3.changement();
-                  break;
+                    Case3.changement()
+                    break
                 case Qt.Key_Left:
 
-                  Case3.changement();
-                  break;
-              }
+                    Case3.changement()
+                    break
+                }
             }
         }
     }
@@ -902,7 +900,6 @@ Page {
             y: 0
             color: "#fe0101"
 
-
             font.weight: Font.Black
             anchors.fill: parent
             anchors.topMargin: 0
@@ -916,24 +913,24 @@ Page {
             topPadding: 40
             text: Case4.CaseQML
             Keys.onPressed: {
-              switch (event.key) {
+                switch (event.key) {
                 case Qt.Key_Up:
 
-                  Case4.changement();
-                  break;
+                    Case4.changement()
+                    break
                 case Qt.Key_Down:
 
-                  Case4.changement();
-                  break;
+                    Case4.changement()
+                    break
                 case Qt.Key_Right:
 
-                  Case4.changement();
-                  break;
+                    Case4.changement()
+                    break
                 case Qt.Key_Left:
 
-                  Case4.changement();
-                  break;
-              }
+                    Case4.changement()
+                    break
+                }
             }
         }
     }
@@ -949,7 +946,7 @@ Page {
         anchors.topMargin: 10
         border.color: "#040404"
 
-        Text{
+        Text {
             id: scoretext
             color: "#0a00c9"
             text: qsTr("Score")
@@ -973,24 +970,24 @@ Page {
 
         Text {
             id: textEdit
+            x: 40
+            y: 40
             color: "#0a00c9"
-            text: Score.caseQML
-            Keys.onPressed: {
-              switch (event.key) {
-                case Qt.Key_Up:
-                  Score.increment();
-                  break;
-              }
-            }
-
-            horizontalAlignment: Text.AlignHCenter
-            font.weight: Font.ExtraBold
+            width: 100
+            height: 50
+            //horizontalAlignment: Text.AlignHCenter
+            //font.weight: Font.ExtraBold
             anchors.fill: parent
             font.pixelSize: 24
+            text: Score.ScoreQML
+            focus: true
+            Keys.onPressed: {
+                switch (event.key) {
+                case (Qt.Key_Up):
+                    Score.ajout()
+                    break
+                }
+            }
         }
     }
-
-
-
 }
-

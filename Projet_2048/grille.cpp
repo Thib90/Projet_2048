@@ -19,6 +19,7 @@ Grille::Grille(QObject *parent) : QObject(parent)
 
 
 
+
 Grille::Grille( Grille &Gr) // constructeur de copie
 {
     for(int i=0; i<4; i++)
@@ -86,6 +87,7 @@ void Grille::AjoutCase()
 void Grille::MouvementHaut()
 // Fonction qui a pour but de gérer les valeurs de la grille lorsque l'utilisateur commande un mouvementvers le haut
 {
+    cout<<"Haut";
     Grille Gcopie(*this); // copie de la grille avant sa modification
     /*Afin de pouvoir gérer les nouvelles valeurs de la grille, on va se placer dans une situation plus facile avant de comparer :
     celle où tous les chiffres non nul sont côte à côte

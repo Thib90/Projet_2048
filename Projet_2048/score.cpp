@@ -3,18 +3,20 @@
 
 Score::Score(QObject *parent) : QObject(parent)
 {
-    fScore=10;
-    ScoreChanged();
+    fScore=1120;
+    scoreChanged();
 }
 
-QString Score::ReadScore()
+QString Score::readScore()
 {
     return QString::number(fScore);
 }
 
-void Score::Ajout() {
+void Score::ajout()
+{
+    std::cout<<"Ajout";
     fScore++;
-    ScoreChanged();
+    scoreChanged();
 }
 
 

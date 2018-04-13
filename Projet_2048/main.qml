@@ -1,30 +1,16 @@
 import QtQuick 2.9
-import QtQuick.Controls 2.2
+import QtQuick.Window 2.2
 
-ApplicationWindow {
+Window {
     visible: true
     width: 530
     height: 730
-    title: qsTr("Tabs")
+    title: qsTr("2048")
 
-    SwipeView {
-        id: swipeView
+
+    Page1Form {
         anchors.fill: parent
-        currentIndex: tabBar.currentIndex
-
-        Page1Form {
-        }
-
-
     }
-
-    footer: TabBar {
-        id: tabBar
-        currentIndex: swipeView.currentIndex
-
-
-
-    }
-
 
 }
+

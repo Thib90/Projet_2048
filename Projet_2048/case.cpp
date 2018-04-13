@@ -8,7 +8,7 @@ Case::Case(int ligne, int colonne, Grille grille, QObject *parent) : QObject(par
     {
         for(int j=0; j<4 ; j++)
         {
-            this->grille.ValueCase(i,j,grille.Get(i,j));
+            this->MaGrille.ValueCase(i,j,grille.Get(i,j));
 
         }
     }
@@ -19,16 +19,27 @@ Case::Case(int ligne, int colonne, Grille grille, QObject *parent) : QObject(par
 
 QString Case::Read()
 {
-    fCase=grille.Get(ligne,colonne);
+    fCase=MaGrille.Get(ligne,colonne);
     return QString::number(fCase);
 }
 
 
-
-
-
-void Case::Changement()
+void Case::changement(Grille grille, int key)
 {
+    switch (key)
+    { case 1:
+        grille.MouvementHaut();
+        break;
+      case 2:
+        grille.MouvementBas();
+        break;
+      case 3:
+        grille.MouvementGauche();
+        break;
+      case 4:
+        grille.MouvementDroite();
+        break;
+    }
     caseChanged();
 }
 
